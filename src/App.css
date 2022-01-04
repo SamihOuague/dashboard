@@ -1,38 +1,154 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
+@keyframes spin {
+  0% {
     transform: rotate(0deg);
   }
-  to {
+  100% {
     transform: rotate(360deg);
   }
 }
+.login {
+  height: 100%;
+}
+.login__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 320px;
+  height: 100%;
+}
+.login__container--spinner {
+  font-size: 56px;
+  animation-name: spin;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  height: 64px;
+  width: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #F15152;
+}
+.login__container__form {
+  display: flex;
+  flex-direction: column;
+  width: 240px;
+}
+.login__container__form--input {
+  min-width: 240px;
+  min-height: 32px;
+  margin: 4px 0;
+}
+.login__container__form--btn {
+  border: none;
+  min-height: 32px;
+  cursor: pointer;
+  background: #F15152;
+  color: #ecf1f3;
+  font-size: 16px;
+  margin-top: 4px;
+}
+
+.parametre__container {
+  padding: 16px;
+}
+.parametre__container__elt {
+  display: flex;
+  flex-direction: column;
+}
+.parametre__container__elt__body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 240px;
+}
+.parametre__container__elt__body--spinner {
+  font-size: 56px;
+  animation-name: spin;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  height: 64px;
+  width: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #F1C40F;
+}
+.parametre__container__elt__body__form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.parametre__container__elt__body__form--input {
+  min-width: 100%;
+  min-height: 32px;
+  margin: 4px 0;
+}
+.parametre__container__elt__body__form--btn {
+  border: none;
+  min-height: 32px;
+  cursor: pointer;
+  background: #F1C40F;
+  color: #261C15;
+  font-size: 16px;
+  margin-top: 4px;
+}
+
+.main {
+  display: flex;
+  height: 100%;
+}
+.main__navigation {
+  min-width: 320px;
+  height: 100%;
+  box-shadow: 0px 0px 15px #261C15;
+  background: #ecf1f3;
+  position: fixed;
+}
+.main__navigation__container__bloc {
+  border-bottom: 1px solid black;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #261C15;
+  text-decoration: none;
+  cursor: pointer;
+}
+.main__navigation__container__bloc i {
+  width: 56px;
+  display: flex;
+  justify-content: center;
+}
+.main__navigation__container__bloc--bubble {
+  width: 24px;
+  height: 24px;
+  background: #F15152;
+  color: #ecf1f3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px 8px;
+  border-radius: 50%;
+}
+.main__navigation__container__bloc--title {
+  display: flex;
+  align-items: center;
+  color: #261C15;
+}
+.main__navigation--title {
+  text-align: center;
+  color: #261C15;
+}
+.main__body {
+  flex: 1;
+  margin-left: 320px;
+}
+
+body, html, #root {
+  height: 100%;
+}
+
+/*# sourceMappingURL=App.css.map */

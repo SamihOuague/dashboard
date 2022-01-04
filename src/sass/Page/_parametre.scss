@@ -1,0 +1,17 @@
+.parametre {
+    &__container {
+        padding: 16px;
+        &__elt {
+            display: flex;
+            flex-direction: column;
+            &__body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                min-height: 240px;
+                @include customForm($warning, $dark, 100%);
+            }
+        }
+    }
+}

@@ -1,0 +1,52 @@
+.main {
+    display: flex;
+    height: 100%;
+    &__navigation {
+        min-width: 320px;
+        height: 100%;
+        box-shadow: 0px 0px 15px $dark;
+        background: $light;
+        position: fixed;
+        &__container {
+            &__bloc {
+                border-bottom: 1px solid black;
+                height: 56px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                color: $dark;
+                text-decoration: none;
+                cursor: pointer;
+                i {
+                    width: 56px;
+                    display: flex;
+                    justify-content: center;
+                }
+                &--bubble {
+                    width: 24px;
+                    height: 24px;
+                    background: $danger;
+                    color: $light;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 0px 8px;
+                    border-radius: 50%;
+                }
+                &--title {
+                    display: flex;
+                    align-items: center;
+                    color: $dark;
+                }
+            }
+        }
+        &--title {
+            text-align: center;
+            color: $dark;
+        }
+    }
+    &__body {
+        flex: 1;
+        margin-left: 320px;
+    }
+}
