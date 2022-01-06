@@ -1,101 +1,3 @@
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-.login {
-  height: 100%;
-}
-.login__container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 320px;
-  height: 100%;
-}
-.login__container--spinner {
-  font-size: 56px;
-  animation-name: spin;
-  animation-duration: 2s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  height: 64px;
-  width: 64px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #F15152;
-}
-.login__container__form {
-  display: flex;
-  flex-direction: column;
-  width: 240px;
-}
-.login__container__form--input {
-  min-width: 240px;
-  min-height: 32px;
-  margin: 4px 0;
-}
-.login__container__form--btn {
-  border: none;
-  min-height: 32px;
-  cursor: pointer;
-  background: #F15152;
-  color: #ecf1f3;
-  font-size: 16px;
-  margin-top: 4px;
-}
-
-.parametre__container {
-  padding: 16px;
-}
-.parametre__container__elt {
-  display: flex;
-  flex-direction: column;
-}
-.parametre__container__elt__body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  min-height: 240px;
-}
-.parametre__container__elt__body--spinner {
-  font-size: 56px;
-  animation-name: spin;
-  animation-duration: 2s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  height: 64px;
-  width: 64px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #F1C40F;
-}
-.parametre__container__elt__body__form {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-.parametre__container__elt__body__form--input {
-  min-width: 100%;
-  min-height: 32px;
-  margin: 4px 0;
-}
-.parametre__container__elt__body__form--btn {
-  border: none;
-  min-height: 32px;
-  cursor: pointer;
-  background: #F1C40F;
-  color: #261C15;
-  font-size: 16px;
-  margin-top: 4px;
-}
-
 .main {
   display: flex;
   height: 100%;
@@ -145,6 +47,213 @@
 .main__body {
   flex: 1;
   margin-left: 320px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.login {
+  height: 100%;
+}
+.login__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 320px;
+  height: 100%;
+}
+.login__container--spinner {
+  font-size: 56px;
+  animation-name: spin;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  height: 64px;
+  width: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #F15152;
+}
+.login__container__form {
+  display: flex;
+  flex-direction: column;
+  width: 240px;
+}
+.login__container__form--input {
+  min-width: 240px;
+  min-height: 32px;
+  margin: 4px 0px;
+  outline: none;
+}
+.login__container__form--btn {
+  min-height: 32px;
+  margin: 4px 0px;
+  border: none;
+  cursor: pointer;
+  background: #F15152;
+  color: #ecf1f3;
+  font-size: 16px;
+  width: 240px;
+}
+
+.parametre__container {
+  padding: 16px;
+}
+.parametre__container__elt {
+  display: flex;
+  flex-direction: column;
+}
+.parametre__container__elt__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+}
+.parametre__container__elt__head--icon {
+  cursor: pointer;
+  color: #00CC66;
+  border: 1px solid #00CC66;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  transition-property: background, color;
+  transition-duration: 400ms;
+}
+.parametre__container__elt__head--icon:hover {
+  background: #00CC66;
+  color: #ecf1f3;
+}
+.parametre__container__elt__body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 240px;
+}
+.parametre__container__elt__body--spinner {
+  font-size: 56px;
+  animation-name: spin;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  height: 64px;
+  width: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #F1C40F;
+}
+.parametre__container__elt__body__form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.parametre__container__elt__body__form--input {
+  min-width: 100%;
+  min-height: 32px;
+  margin: 4px 0px;
+  outline: none;
+}
+.parametre__container__elt__body__form--btn {
+  min-height: 32px;
+  margin: 4px 0px;
+  border: none;
+  cursor: pointer;
+  background: #F1C40F;
+  color: #261C15;
+  font-size: 16px;
+  width: 100%;
+}
+.parametre__container__elt__register {
+  border-bottom: 1px solid #261C15;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 24px;
+}
+.parametre__container__elt__register--icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 21px;
+  transition-property: font-size, color;
+  transition-duration: 400ms;
+  cursor: pointer;
+}
+.parametre__container__elt__register--icon:hover {
+  color: #f1a051;
+  font-size: 24px;
+}
+.parametre__container__elt__register--spinner {
+  font-size: 56px;
+  animation-name: spin;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  height: 64px;
+  width: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #F15152;
+}
+.parametre__container__elt__register__form {
+  display: flex;
+  flex-direction: row;
+  width: 240px;
+}
+.parametre__container__elt__register__form--input {
+  min-width: 240px;
+  min-height: 32px;
+  margin: 4px 0px;
+  outline: none;
+}
+.parametre__container__elt__register__form--btn {
+  min-height: 32px;
+  margin: 4px 0px;
+  border: none;
+  cursor: pointer;
+  background: #F15152;
+  color: #ecf1f3;
+  font-size: 16px;
+  width: 240px;
+}
+.parametre__container__elt__register__form--input {
+  margin-right: 16px;
+}
+.parametre__container__elt__user {
+  border-bottom: 1px solid #261C15;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+}
+.parametre__container__elt__user--icon {
+  color: #F15152;
+  cursor: pointer;
+  font-size: 18px;
+  transition-property: font-size, color;
+  transition-duration: 400ms;
+}
+.parametre__container__elt__user--icon:hover {
+  color: #f1a051;
+  font-size: 21px;
+}
+
+.message__container {
+  padding: 16px;
+}
+.message__container__msg {
+  border-top: 1px solid #261C15;
+  height: 64px;
 }
 
 body, html, #root {

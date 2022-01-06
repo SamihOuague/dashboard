@@ -11,6 +11,20 @@ export const auth = (data, route) => {
     });
 }
 
+export const add = (user, token) => {
+    return fetch("http://localhost:3001/add", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+            "Authorization": "Barear " + token,
+        },
+        body: JSON.stringify(user)
+    }).then((res) => {
+        return res.json();
+    });
+}
+
 export const update = (data, token) => {
     return fetch("http://localhost:3001/update", {
         method: "POST",
@@ -27,6 +41,19 @@ export const update = (data, token) => {
 
 export const list = () => {
     return fetch("http://localhost:3001/list").then((res) => {
+        return res.json();
+    });
+}
+
+export const remove = (id, token) => {
+    return fetch("http://localhost:3001/remove/" + id, {
+        method: "DELETE",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+            "Authorization": "Barear " + token
+        }
+    }).then((res) => {
         return res.json();
     });
 }

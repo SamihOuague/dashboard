@@ -1,8 +1,9 @@
 @import "./Utils/variable";
 @import "./Utils/mixin";
+@import "./Layout/home";
 @import "./Page/login";
 @import "./Page/parametre";
-@import "./Layout/home";
+@import "./Page/message";
 body, html, #root {
     height: 100%;
 }

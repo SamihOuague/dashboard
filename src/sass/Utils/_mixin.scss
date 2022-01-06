@@ -1,4 +1,4 @@
-@mixin customForm($bg: $danger, $color: $light, $width: 240px) {
+@mixin customForm($bg: $danger, $color: $light, $width: 240px, $direction: column) {
     &--spinner {
         font-size: 56px;
         animation-name: spin;
@@ -14,21 +14,23 @@
     }
     &__form {
         display: flex;
-        flex-direction: column;
+        flex-direction: $direction;
         width: $width;
         &--input {
             min-width: $width;
             min-height: 32px;
-            margin: 4px 0;
+            margin: 4px 0px;
+            outline: none;
         }
         &--btn {
-            border: none;
             min-height: 32px;
+            margin: 4px 0px;
+            border: none;
             cursor: pointer;
             background: $bg;
             color: $color;
             font-size: 16px;
-            margin-top: 4px;
+            width: $width;
         }
     }
 }

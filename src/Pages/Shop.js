@@ -4,7 +4,10 @@ class Shop extends Component {
     render() {
         return(
             <section className="shop">
-                <h1>Manage your shop</h1>
+                <h2><i style={{margin: "0 16px"}} className="fas fa-store"></i>Boutique</h2>
+                <div className="shop__container">
+                    
+                </div>
             </section>
         );
     }

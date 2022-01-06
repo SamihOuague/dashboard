@@ -4,6 +4,29 @@
         &__elt {
             display: flex;
             flex-direction: column;
+            &__head {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0 16px;
+                &--icon {
+                    cursor: pointer;
+                    color: $success;
+                    border: 1px solid $success;
+                    width: 36px;
+                    height: 36px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 5px;
+                    transition-property: background, color;
+                    transition-duration: 400ms;
+                    &:hover {
+                        background: $success;
+                        color: $light;
+                    }
+                }
+            }
             &__body {
                 display: flex;
                 justify-content: center;
@@ -11,6 +34,47 @@
                 width: 100%;
                 min-height: 240px;
                 @include customForm($warning, $dark, 100%);
+            }
+            &__register {
+                border-bottom: 1px solid $dark;
+                display: flex;
+                justify-content: space-between;
+                padding: 0 24px;
+                &--icon {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 21px;
+                    transition-property: font-size, color;
+                    transition-duration: 400ms;
+                    cursor: pointer;
+                    &:hover {
+                        color: adjust-hue($danger, $degrees: 30);
+                        font-size: 24px;
+                    }
+                }
+                @include customForm($direction: row);
+                &__form--input {
+                    margin-right: 16px;
+                }
+            }
+            &__user {
+                border-bottom: 1px solid $dark;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 0 24px;
+                &--icon {
+                    color: $danger;
+                    cursor: pointer;
+                    font-size: 18px;
+                    transition-property: font-size, color;
+                    transition-duration: 400ms;
+                    &:hover {
+                        color: adjust-hue($danger, $degrees: 30);
+                        font-size: 21px;
+                    }
+                }
             }
         }
     }

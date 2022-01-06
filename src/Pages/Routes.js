@@ -11,6 +11,6 @@ export const Router = () => (
       <Route path="/blog" element={<Blog/>} />
       <Route path="/shop" element={<Shop/>} />
       <Route path="/message" element={<Message/>} />
-      <Route path="/parametre" element={<Parametre/>} />
+      <Route path="/parametre" element={<Parametre/>} /> 
     </Routes>
 );

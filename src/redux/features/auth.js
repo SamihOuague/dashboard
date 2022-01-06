@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { auth, list, update } from "../api/authApi";
+import { auth, list, update, remove, add } from "../api/authApi";
 
 export const authLogin = createAsyncThunk(
     "auth/authLogin",
@@ -13,6 +13,14 @@ export const authRegister = createAsyncThunk(
     "auth/authRegister",
     async (data) => {
         const response = await auth(data, "register");
+        return response;
+    }
+);
+
+export const addUser = createAsyncThunk(
+    "auth/addUser",
+    async (data) => {
+        const response = await add(data.user, data.token);
         return response;
     }
 );
@@ -31,6 +39,14 @@ export const usersList = createAsyncThunk(
         const response = await list();
         return response;
     } 
+);
+
+export const deleteUser = createAsyncThunk(
+    "auth/deleteUser",
+    async (data) => {
+        const response = await remove(data.id, data.token);
+        return response;
+    }
 )
 
 export const authSlice = createSlice({
@@ -41,7 +57,8 @@ export const authSlice = createSlice({
         message: null,
         login: true,
         email: "",
-        users: []
+        users: [],
+        newUser: false,
     },
     reducers: {
         fetchStart: (state) => {
@@ -52,6 +69,12 @@ export const authSlice = createSlice({
         },
         changeMsg: (state, action) => {
             state.message = action.payload;
+        },
+        openForm: (state) => {
+            state.newUser = true;
+        },
+        closeForm: (state) => {
+            state.newUser = false;
         }
     },
     extraReducers: (builder) => {
@@ -77,6 +100,17 @@ export const authSlice = createSlice({
             }
         });
 
+        builder.addCase(addUser.fulfilled, (state, action) => {
+            state.fetching = false;
+            if (action.payload.message)
+                state.message = action.payload.message;
+            else if (action.payload.user) {
+                state.message = null;
+                state.newUser = false;
+                state.users = [...state.users, action.payload.user];
+            }
+        });
+
         builder.addCase(updateProfile.fulfilled, (state, action) => {
             state.fetching = false;
             if (action.payload.message)
@@ -90,9 +124,16 @@ export const authSlice = createSlice({
             if (Array.isArray(action.payload))
                 state.users = action.payload;
         });
+        builder.addCase(deleteUser.fulfilled, (state, action) => {
+            if (action.payload.docs) {
+                state.users = state.users.filter((val) => {
+                    return val._id !== action.meta.arg.id;
+                });
+            }
+        });
     }
 });
 
-export const { fetchStart, logRegister, changeMsg } = authSlice.actions;
+export const { fetchStart, logRegister, changeMsg, openForm, closeForm } = authSlice.actions;
 
 export default authSlice.reducer;

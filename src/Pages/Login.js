@@ -60,7 +60,7 @@ const FormControl = (props) => (
                 type="password" placeholder="Confirm password" name="confirm_pwd"
                 onChange={(e) => props.t.pwdConfirm = e.target.value }/>
         }
-        <a href="#" onClick={() => props.p.logRegister()}>{(props.p.login) ? "Je n'ai pas de compte !" : "J'ai deja un compte."}</a>
+        <a href="#login" style={{fontSize: "12px"}} onClick={() => props.p.logRegister()}>{(props.p.login) ? "Je n'ai pas de compte !" : "J'ai deja un compte !"}</a>
         {(props.p.message) && <p>{props.p.message}</p>}
         <button className="login__container__form--btn">{(props.p.login) ? "Se connecter" : "S'enregistrer"}</button>
     </form>

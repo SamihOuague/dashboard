@@ -1,0 +1,9 @@
+.message {
+    &__container {
+        padding: 16px;
+        &__msg {
+            border-top: 1px solid $dark;
+            height: 64px;
+        }
+    }
+}
