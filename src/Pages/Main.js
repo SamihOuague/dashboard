@@ -3,8 +3,13 @@ import { connect } from "react-redux";
 import Login from "./Login";
 import { Router } from "./Routes";
 import { Link } from "react-router-dom";
+import { checkCookie } from "../redux/features/auth"
 
 class Main extends Component {
+    componentDidMount() {
+        this.props.checkCookie();
+    }
+
     render() {
         return(
             <section className="main">
@@ -64,4 +69,8 @@ const mapStateToProps = state => {
     return state.auth;
 }
 
-export default connect(mapStateToProps)(Main);
+const mapDispatchToProps = {
+    checkCookie,
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Main);

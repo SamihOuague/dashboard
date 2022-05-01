@@ -47,7 +47,28 @@ export const deleteUser = createAsyncThunk(
         const response = await remove(data.id, data.token);
         return response;
     }
-)
+);
+
+const setCookie = (cname, cvalue, exdays = 1) => {
+    let d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    document.cookie = cname + "=" + cvalue + ";expires=" + d.toUTCString() +"; path=/;samesite=none;secure";
+}
+
+const getCookie = (cname) => {
+    let c = document.cookie.split("; ").map((val) => {
+        let v = val.split("=");
+        let d = {};
+        d[v[0]] = v[1];
+        return d;
+    });
+    for (let i = 0; i < c.length; i++) {
+        if (c[i][cname]) {
+            return c[i][cname];
+        }
+    }
+    return false;
+}
 
 export const authSlice = createSlice({
     name: "auth",
@@ -75,6 +96,12 @@ export const authSlice = createSlice({
         },
         closeForm: (state) => {
             state.newUser = false;
+        },
+        checkCookie: (state) => {
+            if (getCookie("token"))
+                state.token = getCookie("token");
+            else
+                console.log("Nope");
         }
     },
     extraReducers: (builder) => {
@@ -86,6 +113,7 @@ export const authSlice = createSlice({
                 state.token = action.payload.token;
                 state.email = action.payload.email;
                 state.message = null;
+                setCookie("token", state.token, 2);
             }
         });
 
@@ -97,6 +125,7 @@ export const authSlice = createSlice({
                 state.token = action.payload.token;
                 state.email = action.payload.email;
                 state.message = null;
+                setCookie("token", state.token, 2);
             }
         });
 
@@ -134,6 +163,6 @@ export const authSlice = createSlice({
     }
 });
 
-export const { fetchStart, logRegister, changeMsg, openForm, closeForm } = authSlice.actions;
+export const { fetchStart, logRegister, changeMsg, openForm, closeForm, checkCookie } = authSlice.actions;
 
 export default authSlice.reducer;
